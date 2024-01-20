@@ -28,5 +28,4 @@ public class TelegramBotUpdateListener implements UpdatesListener {
     public int process(List<Update> list) {
         return 0;
     }
-
 }
