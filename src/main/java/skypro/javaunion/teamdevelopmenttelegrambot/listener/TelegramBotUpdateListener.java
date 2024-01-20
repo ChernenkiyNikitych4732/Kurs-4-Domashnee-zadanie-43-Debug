@@ -1,13 +1,32 @@
 package skypro.javaunion.teamdevelopmenttelegrambot.listener;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import skypro.javaunion.teamdevelopmenttelegrambot.TelegramBotApplication;
+import com.pengrad.telegrambot.UpdatesListener;
+import com.pengrad.telegrambot.model.Update;
+import lombok.Getter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
-@SpringBootApplication
-public class TelegramBotUpdateListener {
+import java.util.List;
 
-    public static void main(String[] args) {
-        SpringApplication.run(TelegramBotApplication.class);
+/**
+ * Объект, уведомляемый о событии.
+ * Он должен быть зарегистрирован источником событий
+ * и реализовывать методы для получения и обработки уведомлений.
+ */
+@Getter
+@Component
+public class TelegramBotUpdateListener implements UpdatesListener {
+
+    private final Logger logger = LoggerFactory.getLogger(TelegramBotUpdateListener.class);
+
+    public TelegramBotUpdateListener() {
     }
+
+
+    @Override
+    public int process(List<Update> list) {
+        return 0;
+    }
+
 }
